@@ -1,13 +1,12 @@
 const notes = require("express").Router();
 //unique id for each note
-const {v4: uuidv4} = require('../helpers/uuid')
+const uuid = require('../helpers/uuid')
 //using helper functions
 const { readFromFile, writeToFile, readAndAppend } = require('../helpers/fsUtils');
 
 
 //route for retrieving rendered notes
 notes.get('/', (req, res) => {
-    //if not working, check 2 dots
     readFromFile("./db/db.json")
     .then(data => res.json(JSON.parse(data)));    
 });
@@ -20,7 +19,7 @@ notes.post('/', (req, res) => {
         const newNote = {
             title,
             text,
-            notes_id: uuidv4(),
+            id: uuid(),
         };
         readAndAppend(newNote, "./db/db.json");
         res.json(`New note successfully added`);
