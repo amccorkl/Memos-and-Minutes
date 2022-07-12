@@ -1,12 +1,12 @@
-const { Router } = require('express');
+const express = require('express');
 //import notes module router
 const notesRouter = require('./notes');
 
-const router = Router();
+const app = express();
 
 
-router.use("/notes", notesRouter);
+app.use("/notes", notesRouter);
 
 
 
-module.exports = router;
+module.exports = app;

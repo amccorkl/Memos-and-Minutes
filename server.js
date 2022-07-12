@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const api = require('./routes')
+const api = require('./routes/index.js');
 
 const PORT =  process.env.PORT || 3001;
 //function that creates the express function bound to the word app
@@ -25,7 +25,7 @@ app.get("/notes", (req, res) =>
 //wildcard response
 app.get("*", (req, res) => 
     res.status(404)
-    .res.sendFile(path.join(__dirname, "/public/404.html")))
+    .sendFile(path.join(__dirname, "/public/404.html")))
 
 app.listen(PORT, () => 
     console.log(`listening on port ${PORT}`));
