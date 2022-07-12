@@ -14,10 +14,11 @@ app.use(express.static("public"));
 
 app.use("/api", api);
 
-//home route
+//home UI route
 app.get('/', (req, res) => 
     res.sendFile(path.join(__dirname, "/public/index.html")))
 
+//notes UI route
 app.get("/notes", (req, res) => 
     res.sendFile(path.join(__dirname, "/public/notes.html")))
 
