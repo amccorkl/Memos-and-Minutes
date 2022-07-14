@@ -1,25 +1,12 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text"
-    },
-    {
         "title": "Tech Purchases",
-        "text": "new mouse needed"
+        "text": "new ergo keyboard needed",
+        "id": "86a2c039-9004-4497-8855-406555c2c6fa"
     },
     {
         "title": "Tech Purchases",
         "text": "new ergo keyboard needed",
-        "notes_id": "86a2c039-9004-4497-8855-406555c2c6fa"
-    },
-    {
-        "title": "Tech Purchases",
-        "text": "new ergo keyboard needed",
-        "notes_id": "39429d2d-8095-4335-90f9-6694e36efd48"
-    },
-    {
-        "title": "Life",
-        "text": "wash car on way home",
-        "id": "f1898b07-2ca4-42a6-96ee-eebc345196f5"
+        "id": "39429d2d-8095-4335-90f9-6694e36efd48"
     }
 ]
