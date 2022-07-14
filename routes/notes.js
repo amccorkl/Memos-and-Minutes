@@ -34,12 +34,12 @@ notes.post('/', (req, res) => {
 
 // route for deleting a note
 notes.delete("/:id", (req, res) => {
-    const deleteId = req.params.id;
+    const noteId = req.params.id;
     readFromFile("./db/db.json")
         .then((data) => JSON.parse(data))
         .then((json) => {
             //filter out the note to delete
-            const newArrayNotes = json.filter((item) => item.id != deleteId);
+            const newArrayNotes = json.filter((item) => item.id != noteId);
             // save new array w/o deleted note
             writeToFile("./db/db.json", newArrayNotes);
             // provide user response to delete function
