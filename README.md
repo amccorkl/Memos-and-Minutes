@@ -3,7 +3,7 @@
 
 ## Description
 
-This simple note taking application can be used to write, save, and delete notes. This application uses an Express.js back end and will save and retrieve note data from a JSON file, and then will deploy the entire application to Heroku.
+This simple note taking application can be used to write, save, and delete notes. The application uses an Express.js back end and will save and retrieve note data from a JSON file. The application deploys on Heroku.
 
 <details>
 <summary><strong>Table of Contents</strong></summary>
