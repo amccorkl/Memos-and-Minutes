@@ -24,11 +24,30 @@ notes.post('/', (req, res) => {
             text,
             id: uuidv4(),
         };
+        //appending the new note using json
         readAndAppend(newNote, "./db/db.json");
         res.json(`New note successfully added`);
     } else {
         res.error("Error posting note");
     }
+});
+
+// route for deleting a note
+notes.delete("/:id", (req, res) => {
+    const deleteId = req.params.id;
+    readFromFile("./db/db.json")
+        .then((data) => JSON.parse(data))
+        .then((json) => {
+            //filter out the note to delete
+            const newArrayNotes = json.filter((item) => item.id != deleteId);
+            // save new array w/o deleted note
+            writeToFile("./db/db.json", newArrayNotes);
+            // provide user response to delete function
+            res.json(`Note ${id} was deleted`);
+        })
+        .catch((error) => {
+            console.error(`There was an error deleting your note \n${error}`)
+        })
 });
 
 module.exports = notes;
